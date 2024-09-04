@@ -56,3 +56,9 @@ exports.default = gulp.series(
 );
 
 exports.watch = watchFiles;
+
+// Build task
+gulp.task('build', gulp.series(
+    gulp.parallel(sassTask, minifyJs),
+    'inject-api-key'
+));
