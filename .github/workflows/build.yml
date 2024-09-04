@@ -11,44 +11,41 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use the latest version of Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3  # Check out the repository's code
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'  # Specify the Node.js version
+        node-version: '16'
 
     - name: Install dependencies
-      run: npm install  # Install project dependencies
+      run: npm install
 
-    - name: Run Gulp tasks
-      run: npx gulp build  # Run your Gulp build task
+    - name: Run Gulp build
+      run: npx gulp build
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
-        name: github-pages
-        path: dist  # Path to the build artifacts
+        name: build
+        path: dist
 
   deploy:
     needs: build
     permissions:
       pages: write
       id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
     - name: Download build artifacts
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v3
       with:
-        name: github-pages
+        name: build
 
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v4
+      uses: actions/deploy-pages@v3
