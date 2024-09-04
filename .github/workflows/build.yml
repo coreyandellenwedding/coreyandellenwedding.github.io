@@ -25,9 +25,6 @@ jobs:
     - name: Install dependencies
       run: npm install  # Install project dependencies
 
-    - name: Build
-      run: npm run build  # Replace this with your build command
-
     - name: Run Gulp tasks
       run: npx gulp inject-api-key  # Run your Gulp task
 
