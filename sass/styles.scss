@@ -899,3 +899,19 @@ body.modal-open {
 .modal-body {
   padding:25px;
 }
+
+/* ==========================================================================
+Login Page
+========================================================================== */
+
+#content {
+  display: none; /* Hide all content by default */
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Fade-in effect */
+}
+
+#content.fade-in {
+  display: block;
+  opacity: 1;
+  transition: opacity 2s ease-in; /* 2-second fade-in with ease-in timing */
+}

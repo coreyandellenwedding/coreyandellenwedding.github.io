@@ -5,6 +5,8 @@ var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass')(require('sass'));
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+require('dotenv').config();
+const replace = require('gulp-replace');
 
 // Compile SCSS to CSS
 function sassTask() {
@@ -14,6 +16,15 @@ function sassTask() {
         .pipe(gulp.dest('./css'))
         .pipe(browserSync.stream());
 }
+
+// apikey
+gulp.task('inject-api-key', function() {
+    const apiKey = process.env.API_KEY;
+    
+    return gulp.src('./js/**/*.{js,css}') // Source all JavaScript and CSS files recursively
+        .pipe(replace('GSHEETS_API_KEY', apiKey)) // Replace placeholder with actual API key
+        .pipe(gulp.dest('dist')); // Output directory, preserving structure
+});
 
 // Minify JS
 function minifyJs() {
