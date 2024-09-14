@@ -1,0 +1,4 @@
+creation_rules:
+  - path_regex: .*\.js
+    pgp:
+      ED3DD9C58F509C476BCFCC5CE74D74B96D92ED2D
