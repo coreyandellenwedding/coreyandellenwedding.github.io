@@ -6,8 +6,8 @@ on:
       - main  # Trigger the workflow on push to the main branch
   pull_request:
     branches:
-      - main  # Trigger the workflow on pull requests to the main branch
-  workflow_dispatch:  # Add this line to enable manual triggering
+      - main  # Trigger build on pull requests to the main branch
+  workflow_dispatch:  # Manual trigger for the workflow
 
 jobs:
   build:
@@ -15,37 +15,50 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+
+    - name: Cache Node.js modules
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '16'  # Update to '18' if your project supports it
 
     - name: Install dependencies
       run: npm install
+
+    - name: Inject secret into static file
+      run: |
+        sed -i 's|api123|'"${{ secrets.MY_SECRET }}"'|g' js/loginPage/login.js
 
     - name: Run Gulp build
       run: npx gulp build
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-pages-artifact@v3
       with:
-        name: build
-        path: dist
+          path: .
+          name: github-pages
+          retention-days: 1
 
   deploy:
     needs: build
     permissions:
       pages: write
       id-token: write
-    runs-on: ubuntu-latest
-    steps:
-    - name: Download build artifacts
-      uses: actions/download-artifact@v3
-      with:
-        name: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v3
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
