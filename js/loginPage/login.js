@@ -12,7 +12,7 @@ async function callAzureFunction(code) {
   console.log(functionKey);
   try {
     const response = await fetch(azureFunctionUrl, {
-      method: 'GET', 
+      method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
         'x-function-key': functionKey
