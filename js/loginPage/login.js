@@ -9,7 +9,6 @@ const azureFunctionUrl = 'https://weddingconfig.azurewebsites.net/api/VerifyCode
 
 async function callAzureFunction(code) {
   var functionKey = 'api123';
-  console.log(functionKey);
   try {
     const response = await fetch(azureFunctionUrl, {
       method: 'POST', 
