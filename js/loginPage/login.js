@@ -30,18 +30,18 @@ async function callAzureFunction(code) {
 
     console.log('Response data:', data);
 
-    return data;
+    return data.isConfirmed;
   } catch (error) {
     console.error('Error calling Azure Function:', error);
   }
 }
 
-function checkCode() {
+async function checkCode() {
     const codeInput = document.getElementById('codeInput').value;  // Get the input value
 
-    var response = callAzureFunction(codeInput);
+    var response = await callAzureFunction(codeInput);
 
-    if (response.isConfirmed || codeInput === 'corey' ) {
+    if (response || codeInput === 'corey' ) {
         document.getElementById('loginSection').style.display = 'none';
         const content = document.getElementById('content');
         content.style.display = 'block'; // Make the content visible
