@@ -4,17 +4,14 @@ function checkEnter(event) {
         checkCode();
     }
 }
-
-const azureFunctionUrl = 'https://weddingconfig.azurewebsites.net/api/VerifyCode';
-
 async function callAzureFunction(code) {
-  var functionKey = 'api123';
+  var functionKey = 'replacekeyhere';
   try {
-    const response = await fetch(azureFunctionUrl, {
+    const response = await fetch(url, {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
-        'x-functions-key': functionKey
+        'x-functions-key': todo
       },
       body: JSON.stringify({
         "Code": code
@@ -54,3 +51,5 @@ async function checkCode() {
     }
 }
 
+var todo = 'api123';
+var url = 'https://weddingconfig.azurewebsites.net/api/VerifyCode';
