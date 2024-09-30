@@ -4,6 +4,7 @@ function checkEnter(event) {
         checkCode();
     }
 }
+
 async function callAzureFunction(code) {
   var functionKey = 'replacekeyhere';
   try {
@@ -34,6 +35,8 @@ async function callAzureFunction(code) {
   }
 }
 
+var url = 'https://weddingconfig.azurewebsites.net/api/VerifyCode';
+
 async function checkCode() {
     const codeInput = document.getElementById('codeInput').value;  // Get the input value
 
@@ -52,4 +55,3 @@ async function checkCode() {
 }
 
 var todo = 'api123';
-var url = 'https://weddingconfig.azurewebsites.net/api/VerifyCode';

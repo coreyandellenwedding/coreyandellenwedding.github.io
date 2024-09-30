@@ -4,6 +4,8 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass')(require('sass'));
 var uglify = require('gulp-uglify');
+var minify = require('gulp-minify');
+var terser = require('gulp-terser');
 var rename = require('gulp-rename');
 require('dotenv').config();
 const replace = require('gulp-replace');
@@ -34,6 +36,18 @@ function minifyJs() {
         .pipe(gulp.dest('./js'));
 }
 
+function minifyLogin() {
+    return gulp.src('./js/loginPage/login.js')
+        .pipe(terser({
+            mangle: true // Enable variable mangling
+        }).on('error', function (err) {
+            log(colors.red('[Error]'), err.toString()); // Log errors
+            this.emit('end'); // Continue processing other files
+        }))
+        .pipe(rename({ basename: 'login.min' }))
+        .pipe(gulp.dest('./js/loginPage'));
+}
+
 // Serve and watch files
 function serve() {
     browserSync.init({
@@ -51,7 +65,7 @@ function watchFiles() {
 
 // Default task
 exports.default = gulp.series(
-    gulp.parallel(sassTask, minifyJs),
+    gulp.parallel(sassTask, minifyJs, minifyLogin),
     serve
 );
 
@@ -59,6 +73,6 @@ exports.watch = watchFiles;
 
 // Build task
 gulp.task('build', gulp.series(
-    gulp.parallel(sassTask, minifyJs),
+    gulp.parallel(sassTask, minifyJs, minifyLogin),
     'inject-api-key'
 ));
