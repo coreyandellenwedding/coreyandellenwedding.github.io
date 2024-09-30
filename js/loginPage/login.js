@@ -15,7 +15,7 @@ async function callAzureFunction(code) {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
-        'x-function-key': functionKey
+        'x-functions-key': functionKey
       },
       body: JSON.stringify({
         "Code": code
@@ -23,7 +23,7 @@ async function callAzureFunction(code) {
     });
 
     if (!response.ok) {
-      const errorMessage = await response.json();
+      const errorMessage = await response.json(); // or response.json() if it's a JSON response
       console.error('Fetch error:', response.status, errorMessage);
       throw new Error(`Error: ${response.status} - ${errorMessage}`);
   }

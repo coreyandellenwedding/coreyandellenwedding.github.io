@@ -3,11 +3,11 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # Trigger the workflow on push to the main branch
+      - main
   pull_request:
     branches:
-      - main  # Trigger build on pull requests to the main branch
-  workflow_dispatch:  # Manual trigger for the workflow
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -33,7 +33,7 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Inject secret into static file
+    - name: Inject key
       run: |
         sed -i 's|api123|'"${{ secrets.FUNCTION_KEY }}"'|g' js/loginPage/login.js
 
