@@ -35,7 +35,7 @@ jobs:
 
     - name: Inject secret into static file
       run: |
-        sed -i 's|api123|'"${{ secrets.TEST_KEY }}"'|g' js/loginPage/login.js
+        sed -i 's|api123|'"${{ secrets.FUNCTION_KEY }}"'|g' js/loginPage/login.js
 
     - name: Run Gulp build
       run: npx gulp build

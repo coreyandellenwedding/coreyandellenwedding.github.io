@@ -23,8 +23,10 @@ async function callAzureFunction(code) {
     });
 
     if (!response.ok) {
-      throw new Error(`Error: ${response.status} ${response.statusText}`);
-    }
+      const errorMessage = await response.json();
+      console.error('Fetch error:', response.status, errorMessage);
+      throw new Error(`Error: ${response.status} - ${errorMessage}`);
+  }
 
     const data = await response.json();
 
