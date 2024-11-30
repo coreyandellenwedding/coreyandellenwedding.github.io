@@ -293,7 +293,7 @@ Hero
 }
 .fixed {
   position: fixed;
-  background-color: #fff6d6;
+  background-color: #C0D7FB;
   z-index: 999;
   width: 100%;
 }
@@ -322,7 +322,6 @@ header {
   }
   ul.primary-nav {
     margin: 0 0 0 75px;
-    padding: 0;
 
     li {
       display: inline;
@@ -336,7 +335,7 @@ header {
         }
       }
       &:last-child a {
-        padding-right: 0px;
+        padding-right: 10px;
       }
     }
   }
@@ -346,10 +345,6 @@ header {
 
       a {
         color: $txt-light;
-
-        &:hover {
-          color: $accent-color;
-        }
       }
     }
   }
