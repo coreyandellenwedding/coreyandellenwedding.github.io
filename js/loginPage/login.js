@@ -59,9 +59,11 @@ async function checkCode() {
 }
 
 window.onload = function(){
+  const loader = document.getElementById("loader");
   const expirationTime = localStorage.getItem(loginCookie);
   const isLoggedIn = expirationTime != null && Date.now() < parseInt(expirationTime, 10);
   if (isLoggedIn){
+    loader.style.display = "none";
     document.getElementById('loginSection').style.display = 'none';
     const content = document.getElementById('content');
     content.style.display = 'block';
