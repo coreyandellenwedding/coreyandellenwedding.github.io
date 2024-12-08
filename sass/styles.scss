@@ -104,6 +104,11 @@ section .header {
   background-color: #000;
   border-radius: 4px;
 }
+.center-text {
+  text-align: center;
+  color:#000;
+  font-weight: 400;
+}
 /* ==========================================================================
 Animations
 ========================================================================== */
@@ -938,10 +943,10 @@ Login Page
 }
 
 /* ==========================================================================
-HAH
+LOGO chat gpt clutch i don't need canva
 ========================================================================== */
 .line1 {
-  font-family: 'Cedarville Cursive', cursive;
+  font-family: 'Great Vibes', cursive;
   font-size: 48px;
   font-weight: bold;
   color: #0cc0df;
@@ -949,6 +954,7 @@ HAH
 
 .line1 span {
   color: #0cc0df;
+  padding: 0 10px 0 10px;
 }
 
 .line2 {
@@ -965,4 +971,27 @@ HAH
   font-weight: 400;
   margin-bottom: 2%;
   color: #0cc0df;
+}
+
+/* ==========================================================================
+IMAGES
+========================================================================== */
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  offset: 50%
+}
+
+img.scaled-image {
+  width: auto !important;
+  height: 600px !important;
+  margin-bottom: 10px;
+  margin-left: 20%;
+  padding: 0 30% 0 30%;
+}
+
+.col-md-6 {
+  padding: 0 5%; /* Add padding around text to prevent overlap */
+  text-align: justify; /* Optional: Makes the text easier to read */
 }
