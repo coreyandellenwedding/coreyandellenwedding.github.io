@@ -58,17 +58,27 @@ async function checkCode() {
   }
 }
 
-window.onload = function(){
+window.onload = function() {
   const loader = document.getElementById("loader");
+  const loginSection = document.getElementById("loginSection");
+  const content = document.getElementById("content");
+
+  loginSection.style.display = "none"; 
+  loader.style.display = "block";
+
   const expirationTime = localStorage.getItem(loginCookie);
   const isLoggedIn = expirationTime != null && Date.now() < parseInt(expirationTime, 10);
-  if (isLoggedIn){
+
+  if (isLoggedIn) {
     loader.style.display = "none";
-    document.getElementById('loginSection').style.display = 'none';
-    const content = document.getElementById('content');
-    content.style.display = 'block';
+    loginSection.style.display = "none";
+    content.style.display = "block";
     content.classList.add('fade-in');
+  } else {
+    loader.style.display = "none";
+    loginSection.style.display = "block"; 
+    content.style.display = "none";
   }
-}
+};
 
 var todo = 'api123';

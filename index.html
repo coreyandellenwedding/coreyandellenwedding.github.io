@@ -77,12 +77,12 @@
     </head>
 </body>
 <body>
-    <div id="loader" class="loader"></div>
-    <div id="loginSection">
+    <div id="loginSection" style="display: none;">
         <h2>Welcome to Corey & Ellen's wedding page :&#41; </h2>
         <input type="text" id="codeInput" placeholder="Enter code here" onkeydown="checkEnter(event)">
         <button onclick="checkCode()">Submit</button>
     </div>
+    <div id="loader" class="loader" style="display:none"></div>
 
     <div id="content">
         <section class="hero">
@@ -125,7 +125,6 @@
                                                                 class="btn btn-accent btn-large rsvp-btn">RSVP</a></div>
                     <div class="col-sm-4 hidden-xs"></div>
                 </div>
-            </div>
             <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
         </section>
 
