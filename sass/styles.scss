@@ -278,7 +278,7 @@ Hero
     margin-bottom: 80px;
   }
   .hero-content {
-    padding-top: 40%;
+    padding-top: 45%;
   }
   .hero-content img {
     width: 55%;
@@ -935,4 +935,34 @@ Login Page
   100% {
       transform: rotate(360deg);
   }
+}
+
+/* ==========================================================================
+HAH
+========================================================================== */
+.line1 {
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 48px;
+  font-weight: bold;
+  color: #0cc0df;
+}
+
+.line1 span {
+  color: #0cc0df;
+}
+
+.line2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0cc0df;
+}
+
+.line3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 2%;
+  color: #0cc0df;
 }
