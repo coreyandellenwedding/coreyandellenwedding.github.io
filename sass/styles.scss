@@ -1000,3 +1000,33 @@ img.scaled-image {
   padding: 0 5%; /* Add padding around text to prevent overlap */
   text-align: justify; /* Optional: Makes the text easier to read */
 }
+
+.eng-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.eng-item {
+  flex: 1;
+  max-width: 300px;
+  height: 350px;
+  overflow: hidden;
+}
+
+.eng-item img {
+  width: 100%; 
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .eng-item {
+    flex: 1 1 100%; /* Each image takes full width on small screens */
+    max-width: 100%; /* Remove fixed width constraint */
+    height: 200px; /* Reduce the height for smaller screens */
+  }
+}
