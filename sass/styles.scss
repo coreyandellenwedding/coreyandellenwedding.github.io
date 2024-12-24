@@ -784,6 +784,16 @@ Google map
   pointer-events: auto;
 }
 
+.pointer-events-auto {
+  .leftcol {
+    padding-right: 30px;
+    border-right: solid 1px $keyline-color;
+  }
+  .rightcol {
+    padding-left: 30px;
+  }
+}
+
 /* ==========================================================================
 RSVP form
 ========================================================================== */
@@ -998,14 +1008,14 @@ img.scaled-image {
 
 .col-md-6 {
   padding: 0 5%; /* Add padding around text to prevent overlap */
-  text-align: justify; /* Optional: Makes the text easier to read */
+  text-align: justify;
 }
 
 .eng-container {
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
 }
 
 .eng-item {
@@ -1013,20 +1023,45 @@ img.scaled-image {
   max-width: 300px;
   height: 350px;
   overflow: hidden;
-}
-
-.eng-item img {
-  width: 100%; 
-  height: auto;
   border: 2px solid #ddd;
   border-radius: 8px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.eng-item img {
+  width: 100%; 
+  height: auto;
+}
+
 @media (max-width: 768px) {
   .eng-item {
-    flex: 1 1 100%; /* Each image takes full width on small screens */
-    max-width: 100%; /* Remove fixed width constraint */
-    height: 200px; /* Reduce the height for smaller screens */
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: 130px;
   }
+}
+
+.venue-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.venue-img {
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.venue-container:hover img {
+  opacity: 0.2;
+}
+
+.venue-overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }

@@ -124,51 +124,6 @@ $(document).ready(function () {
 
     });
 
-    /********************** Embed youtube video *********************/
-    $('.player').YTPlayer();
-
-
-    /********************** Toggle Map Content **********************/
-    $('#btn-show-map').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
-    });
-    $('#btn-show-content').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
-    });
-
-    /********************** Add to Calendar **********************/
-    var myCalendar = createCalendar({
-        options: {
-            class: '',
-            // You can pass an ID. If you don't, one will be generated for you
-            id: ''
-        },
-        data: {
-            // Event title
-            title: "Corey and Ellen's Wedding",
-
-            // Event start date
-            start: new Date('Sep 1, 2030 10:00'),
-
-            // Event duration (IN MINUTES)
-            // duration: 120,
-
-            // You can also choose to set an end time
-            // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
-
-            // Event Address
-            address: 'Australia',
-
-            // Event Description
-            description: "under construction"
-        }
-    });
-
-    $('#add-to-cal').html(myCalendar);
-
 
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
@@ -202,8 +157,8 @@ $(document).ready(function () {
 
 /********************** Extras **********************/
 // Google map
-function initMap() {
-    var location = {lat: 40.74874871013885, lng: -73.75614409114569};
+function initQueensBotanicalGardenMap() {
+    var location = {lat: 40.751641588299755, lng: -73.82642653717838};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: location,
@@ -216,8 +171,8 @@ function initMap() {
     });
 }
 
-function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
+function initNewMulanMap() {
+    var la_fiesta = {lat: 40.76060224031451, lng: -73.82978457116393};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: la_fiesta,
