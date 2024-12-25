@@ -1041,10 +1041,15 @@ img.scaled-image {
   }
 }
 
+/* ==========================================================================
+VENUE STUFF
+========================================================================== */
+
 .venue-container {
   position: relative;
   text-align: center;
   color: white;
+  overflow: hidden;
 }
 
 .venue-img {
@@ -1054,7 +1059,7 @@ img.scaled-image {
   transition: opacity 0.3s ease;
 }
 
-.venue-container:hover img {
+.venue-container:hover .venue-img {
   opacity: 0.2;
 }
 
@@ -1064,4 +1069,34 @@ img.scaled-image {
   left: 50%;
   transform: translate(-50%, -50%);
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  width: 90%; 
+  word-wrap: break-word;
+}
+
+.venue-link {
+  display: block;
+}
+
+.venue-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.venue-leftcol {
+  border-right: solid 1px $keyline-color;
+}
+
+.venue-leftcol, .venue-rightcol {
+  flex: 1 1 50%;
+  max-width: 50%;
+  padding: 35px;
+}
+
+@media (max-width: 1024px) {
+  .venue-leftcol, .venue-rightcol {
+    flex: 1 1 100%;
+    max-width: 100%;
+    border-right: none;
+  }
 }
