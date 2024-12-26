@@ -131,7 +131,7 @@ $(document).ready(function () {
         var data = $(this).serialize();
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        $.post('https://script.google.com/macros/s/AKfycbzQ7KhB8xYcsgIy07Uu65dXZzBwO5OT3-YPhITs9T9GGznpDNyHnf0vj7MMgWNB7b6zyQ/exec', data)
+        $.post('https://script.google.com/macros/s/AKfycbwdxnUc5ItiKAj0OZkpEOUbiTwQi2f_5fRCOlrRSQ4fnsUddA201eSQ6FrgcdA0IRwf2Q/exec', data)
             .done(function (data) {
                 console.log(data);
                 if (data.result === "error") {
