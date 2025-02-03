@@ -51,6 +51,8 @@ async function loadDynamicText(){
   const userStorage = JSON.parse(localStorage.getItem('userInfo'));
   const invitationMessage = document.getElementById("invitationMessage");
   invitationMessage.textContent = `Hey ${userStorage.name}! This site primarily serves as a details checker and a way to preserve our wedding process going forward! Feel free to check in once in a while :)`;
+  const plusOneBox = document.getElementById("plusOne");
+  plusOneBox.style.display = userStorage.hasOne ? 'block' : 'none';
 }
 
 var url = 'https://weddingconfig.azurewebsites.net/api/VerifyCode';
@@ -60,7 +62,15 @@ async function checkCode() {
 
   var response = await callAzureFunction(codeInput);
 
-  if (response.isConfirmed || codeInput === 'corey') {
+  if ( codeInput === 'corey' || response.isConfirmed) {
+    if (codeInput === 'corey'){
+      response = {
+        name: 'Corey',
+        email: 'coreyhom@test.com',
+        hasOne: true,
+        description: "test description"
+      };
+    }
     document.getElementById('loginSection').style.display = 'none';
     const content = document.getElementById('content');
     content.style.display = 'block';
@@ -68,6 +78,7 @@ async function checkCode() {
     setUserInfo(response);
 
     localStorage.setItem(loginCookie, expirationTime);
+    loadDynamicText();
     setTimeout(() => {
       content.classList.add('fade-in');
     }, 3);
