@@ -7,6 +7,8 @@ var uglify = require('gulp-uglify');
 var minify = require('gulp-minify');
 var terser = require('gulp-terser');
 var rename = require('gulp-rename');
+var obfuscator = require('gulp-javascript-obfuscator') 
+
 require('dotenv').config();
 const replace = require('gulp-replace');
 
@@ -32,6 +34,7 @@ gulp.task('inject-api-key', function() {
 function minifyJs() {
     return gulp.src('./js/scripts.js')
         .pipe(uglify())
+        .pipe(obfuscator({compact:true}))
         .pipe(rename({ basename: 'scripts.min' }))
         .pipe(gulp.dest('./js'));
 }
@@ -44,6 +47,7 @@ function minifyLogin() {
             log(colors.red('[Error]'), err.toString()); // Log errors
             this.emit('end'); // Continue processing other files
         }))
+        .pipe(obfuscator({compact:true}))
         .pipe(rename({ basename: 'login.min' }))
         .pipe(gulp.dest('./js/loginPage'));
 }
