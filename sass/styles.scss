@@ -863,6 +863,30 @@ RSVP form
   }
 }
 
+.form-input-group select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 12px;
+  background-color: #fff;
+  appearance: none; /* Removes default styles in some browsers */
+}
+
+.form-input-group {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form-input-group i {
+  margin-right: 10px;
+  color: #555;
+}
+
 /* ==========================================================================
 Footer
 ========================================================================== */

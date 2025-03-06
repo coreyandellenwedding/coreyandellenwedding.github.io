@@ -341,6 +341,13 @@
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-input-group">
+                                        <i class="fa fa-user"></i><input name="code" class=""
+                                                                        placeholder="Code from Invite"
+                                                                        required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-input-group">
                                         <i class="fa fa-envelope"></i><input type="email" name="email" class=""
                                                                             placeholder="Your email"
                                                                             required>
@@ -353,8 +360,19 @@
                                                                         required>
                                     </div>
                                 </div>
+                                <div class="col-md-6 col-sm-6" id="event-option">
+                                    <div class="form-input-group">
+                                        <i class="fa fa-calendar"></i>
+                                        <select name="attendance" required>
+                                            <option value="" disabled selected>What can you attend?</option>
+                                            <option value="both">Both</option>
+                                            <option value="ceremony">Just Ceremony</option>
+                                            <option value="reception">Just Reception</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="row" id="plusOne">
+                            <div class="row" id="plus-one">
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-input-group">
                                         <i class="fa fa-users"></i><input type="name" name="plusOne" class=""

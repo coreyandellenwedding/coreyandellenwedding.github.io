@@ -29,8 +29,6 @@ async function callAzureFunction(code) {
     }
     const data = await response.json();
 
-    console.log('Response data:', data);
-
     return data;
   } catch (error) {
     console.error('Error calling Azure Function:', error);
@@ -53,14 +51,16 @@ async function loadDynamicText(){
   const userStorage = JSON.parse(localStorage.getItem('userInfo'));
   const invitationMessage = document.getElementById("invitationMessage");
   invitationMessage.textContent = `Hey ${userStorage.name}! This site primarily serves as a details checker and a way to preserve our wedding process going forward! Feel free to check in once in a while :)`;
-  loadPlusOne(userStorage);
+  loadRSVP(userStorage);
   loadCeremony(userStorage);
   loadVenues(userStorage);
 }
 
-function loadPlusOne(userStorage){
-  const plusOneBox = document.getElementById("plusOne");
+function loadRSVP(userStorage){
+  const plusOneBox = document.getElementById("plus-one");
+  const eventOptionBox = document.getElementById("event-option");
   plusOneBox.style.display = userStorage.hasOne ? 'block' : 'none';
+  eventOptionBox.style.display = userStorage.hasCeremony ? 'block' : 'none';
 }
 
 function loadCeremony(userStorage){
@@ -93,7 +93,7 @@ async function checkCode() {
         email: 'coreyhom@test.com',
         hasOne: true,
         description: "test description",
-        hasCeremony: false,
+        hasCeremony: true,
         hasReception: true
       };
     }
