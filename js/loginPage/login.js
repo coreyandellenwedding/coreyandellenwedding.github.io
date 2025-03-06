@@ -42,7 +42,9 @@ async function setUserInfo(response) {
       name: response.name,
       email: response.email,
       hasOne: response.hasOne,
-      description: response.description
+      description: response.description,
+      hasCeremony: response.hasCeremony,
+      hasReception: response.hasReception,
   };
   localStorage.setItem('userInfo', JSON.stringify(userData), expirationTime);
 }
@@ -51,8 +53,30 @@ async function loadDynamicText(){
   const userStorage = JSON.parse(localStorage.getItem('userInfo'));
   const invitationMessage = document.getElementById("invitationMessage");
   invitationMessage.textContent = `Hey ${userStorage.name}! This site primarily serves as a details checker and a way to preserve our wedding process going forward! Feel free to check in once in a while :)`;
+  loadPlusOne(userStorage);
+  loadCeremony(userStorage);
+  loadVenues(userStorage);
+}
+
+function loadPlusOne(userStorage){
   const plusOneBox = document.getElementById("plusOne");
   plusOneBox.style.display = userStorage.hasOne ? 'block' : 'none';
+}
+
+function loadCeremony(userStorage){
+  const ceremonyContent = document.getElementById("ceremony-content");
+  const ceremonyDressCode = document.getElementById("ceremony-dress-code");
+  const ceremonyVenue = document.getElementById("ceremony-venue");
+  ceremonyContent.style.display = userStorage.hasCeremony ? 'block' : 'none';
+  ceremonyDressCode.style.display = userStorage.hasCeremony ? 'block' : 'none';
+  ceremonyVenue.style.display = userStorage.hasCeremony ? 'block' : 'none';
+}
+
+function loadVenues(userStorage){
+  const venueTitle = document.getElementById("venue-title");
+  const venueRestaurant = document.getElementById("venue-restaurant");
+  venueTitle.textContent = userStorage.hasCeremony ? "VENUES" : "VENUE";
+  venueRestaurant.className = userStorage.hasCeremony ? "col-md-6 venue-rightcol" : "venue-container";
 }
 
 var url = 'https://weddingconfig.azurewebsites.net/api/VerifyCode';
@@ -68,7 +92,9 @@ async function checkCode() {
         name: 'Corey',
         email: 'coreyhom@test.com',
         hasOne: true,
-        description: "test description"
+        description: "test description",
+        hasCeremony: false,
+        hasReception: true
       };
     }
     document.getElementById('loginSection').style.display = 'none';
