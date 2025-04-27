@@ -1125,6 +1125,39 @@ VENUE STUFF
 }
 
 /* ==========================================================================
+ACTIVITIES
+========================================================================== */
+
+#things-to-do {
+  padding: 50px 0;
+}
+
+.activities-container {
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+
+.activities-container img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.activities-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ==========================================================================
 REGISTRY PAGE
 ========================================================================== */
 ul.registry-primary-nav {

@@ -54,6 +54,7 @@ async function loadDynamicText(){
   loadRSVP(userStorage);
   loadCeremony(userStorage);
   loadVenues(userStorage);
+  loadParking(userStorage);
 }
 
 function loadRSVP(userStorage){
@@ -79,6 +80,11 @@ function loadVenues(userStorage){
   venueRestaurant.className = userStorage.hasCeremony ? "col-md-6 venue-rightcol" : "venue-container";
 }
 
+function loadParking(userStorage){
+  const ceremonyRestaurant = document.getElementById("ceremony-parking");
+  ceremonyRestaurant.style.display = userStorage.hasCeremony ? 'block' : 'none';
+}
+
 var url = 'https://weddingconfig.azurewebsites.net/api/VerifyCode';
 
 async function checkCode() {
@@ -86,8 +92,8 @@ async function checkCode() {
 
   var response = await callAzureFunction(codeInput);
 
-  if ( codeInput === 'corey' || response.isConfirmed) {
-    if (codeInput === 'corey'){
+  if ( codeInput === 'testuserone' || codeInput === 'testusertwo' || response.isConfirmed) {
+    if (codeInput === 'testuserone'){
       response = {
         name: 'Corey',
         email: 'coreyhom@test.com',
@@ -97,6 +103,18 @@ async function checkCode() {
         hasReception: true
       };
     }
+
+    if (codeInput === 'testusertwo'){
+      response = {
+        name: 'Corey',
+        email: 'coreyhom@test.com',
+        hasOne: false,
+        description: "test description",
+        hasCeremony: false,
+        hasReception: true
+      };
+    }
+
     document.getElementById('loginSection').style.display = 'none';
     const content = document.getElementById('content');
     content.style.display = 'block';
