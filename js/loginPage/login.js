@@ -92,7 +92,7 @@ async function checkCode() {
 
   var response = await callAzureFunction(codeInput);
 
-  if ( codeInput === 'testuserone' || codeInput === 'testusertwo' || response.isConfirmed) {
+  if ( codeInput === 'testuserone' || codeInput === 'testusertwo' || (response != null && response.isConfirmed)) {
     if (codeInput === 'testuserone'){
       response = {
         name: 'Corey',
@@ -127,7 +127,7 @@ async function checkCode() {
       content.classList.add('fade-in');
     }, 3);
   } else {
-    alert("Incorrect code. Please try again.");
+    alert("Incorrect code. Please try again or contact Corey! Might be a mistake on my part too. :)");
   }
 }
 
