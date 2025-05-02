@@ -55,6 +55,22 @@ async function loadDynamicText(){
   loadCeremony(userStorage);
   loadVenues(userStorage);
   loadParking(userStorage);
+  loadWelcomeDialog(userStorage);
+}
+
+function loadWelcomeDialog(userStorage) {
+  const welcomeButtonContent = document.getElementById("welcome-button-content");
+  console.log("Loading welcome dialog with description:", userStorage.description);
+  if (userStorage.description !== ""){
+    const welcomeDialog = document.getElementById("welcome-modal-body");
+    welcomeDialog.textContent = `${userStorage.description}`;
+    if (!localStorage.getItem('welcomeModalShown')) {
+      $('#welcome-modal').modal('show');
+
+      localStorage.setItem('welcomeModalShown', 'true');
+    }
+  }
+  welcomeButtonContent.style.display = userStorage.description === "" ? 'none' : 'block';
 }
 
 function loadRSVP(userStorage){
@@ -98,7 +114,7 @@ async function checkCode() {
         name: 'Corey',
         email: 'coreyhom@test.com',
         hasOne: true,
-        description: "test description",
+        description: "We are so excited to have you at our wedding! We hope you can make it!",
         hasCeremony: true,
         hasReception: true
       };
@@ -109,7 +125,7 @@ async function checkCode() {
         name: 'Corey',
         email: 'coreyhom@test.com',
         hasOne: false,
-        description: "test description",
+        description: "",
         hasCeremony: false,
         hasReception: true
       };
