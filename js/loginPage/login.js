@@ -60,7 +60,6 @@ async function loadDynamicText(){
 
 function loadWelcomeDialog(userStorage) {
   const welcomeButtonContent = document.getElementById("welcome-button-content");
-  console.log("Loading welcome dialog with description:", userStorage.description);
   if (userStorage.description !== ""){
     const welcomeDialog = document.getElementById("welcome-modal-body");
     welcomeDialog.textContent = `${userStorage.description}`;
