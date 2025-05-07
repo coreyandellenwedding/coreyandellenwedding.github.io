@@ -108,6 +108,14 @@ $(document).ready(function () {
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
+        
+        $(this).find('input, select, textarea').each(function() {
+            var $input = $(this);
+            if ($input.is(':not([type="submit"]):not([type="button"])')) {
+                $input.val($.trim($input.val()));
+            }
+        });
+
         var data = $(this).serialize();
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
