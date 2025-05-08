@@ -162,7 +162,9 @@ window.onload = function() {
     loginSection.style.display = "none";
     content.style.display = "block";
     content.classList.add('fade-in');
-    loadDynamicText();
+    if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/" || window.location.pathname === "") {
+      loadDynamicText();
+    }
   } else {
     loader.style.display = "none";
     loginSection.style.display = "block"; 
