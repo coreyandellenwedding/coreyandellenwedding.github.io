@@ -104,47 +104,58 @@ var url = 'https://weddingconfig.azurewebsites.net/api/VerifyCode';
 
 async function checkCode() {
   const codeInput = document.getElementById('codeInput').value;
+  const loading = document.getElementById('loading');
+  
+  loading.style.display = 'block';
+  
+  try {
+    var response = await callAzureFunction(codeInput);
 
-  var response = await callAzureFunction(codeInput);
+    if ( codeInput === 'testuserone' || codeInput === 'testusertwo' || (response != null && response.isConfirmed)) {
+      if (codeInput === 'testuserone'){
+        response = {
+          name: 'Corey',
+          email: 'coreyhom@test.com',
+          hasOne: true,
+          description: "We are so excited to have you at our wedding! We hope you can make it!",
+          hasCeremony: true,
+          hasReception: true
+        };
+      }
 
-  if ( codeInput === 'testuserone' || codeInput === 'testusertwo' || (response != null && response.isConfirmed)) {
-    if (codeInput === 'testuserone'){
-      response = {
-        name: 'Corey',
-        email: 'coreyhom@test.com',
-        hasOne: true,
-        description: "We are so excited to have you at our wedding! We hope you can make it!",
-        hasCeremony: true,
-        hasReception: true
-      };
+      if (codeInput === 'testusertwo'){
+        response = {
+          name: 'Corey',
+          email: 'coreyhom@test.com',
+          hasOne: false,
+          description: "",
+          hasCeremony: false,
+          hasReception: true
+        };
+      }
+
+      document.getElementById('loginSection').style.display = 'none';
+      const content = document.getElementById('content');
+      content.style.display = 'block';
+
+      setUserInfo(response);
+
+      localStorage.setItem(loginCookie, expirationTime);
+      loadDynamicText();
+      setTimeout(() => {
+        content.classList.add('fade-in');
+      }, 3);
+    } else {
+      alert("Incorrect code. Please try again or contact Corey! Might be a mistake on my part too. :)");
     }
-
-    if (codeInput === 'testusertwo'){
-      response = {
-        name: 'Corey',
-        email: 'coreyhom@test.com',
-        hasOne: false,
-        description: "",
-        hasCeremony: false,
-        hasReception: true
-      };
-    }
-
-    document.getElementById('loginSection').style.display = 'none';
-    const content = document.getElementById('content');
-    content.style.display = 'block';
-
-    setUserInfo(response);
-
-    localStorage.setItem(loginCookie, expirationTime);
-    loadDynamicText();
-    setTimeout(() => {
-      content.classList.add('fade-in');
-    }, 3);
-  } else {
-    alert("Incorrect code. Please try again or contact Corey! Might be a mistake on my part too. :)");
+  } catch (error) {
+    console.error("Error during code check:", error);
+    alert("An error occurred. Please try again later.");
+  } finally {
+    loading.style.display = 'none';
   }
 }
+
 
 window.onload = function() {
   const loader = document.getElementById("loader");
