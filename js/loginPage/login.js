@@ -75,8 +75,10 @@ function loadWelcomeDialog(userStorage) {
 function loadRSVP(userStorage){
   const plusOneBox = document.getElementById("plus-one");
   const eventOptionBox = document.getElementById("event-option");
+  const eventSelect = eventOptionBox.querySelector('select');
   plusOneBox.style.display = userStorage.hasOne ? 'block' : 'none';
   eventOptionBox.style.display = userStorage.hasCeremony ? 'block' : 'none';
+  eventSelect.value = userStorage.hasCeremony ? "" : "reception";
 }
 
 function loadCeremony(userStorage){
