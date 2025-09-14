@@ -257,7 +257,7 @@ Hero
 ========================================================================== */
 .hero {
   min-height: 750px;
-  background: url('../img/hero-min.jpg') center 65%;
+  background: url('../img/wedding/hero-wedding.jpg') center 65%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -939,8 +939,6 @@ Login Page
 ========================================================================== */
 
 #content {
-  display: none; /* Hide all content by default */
-  opacity: 0;
   transition: opacity 1s ease-in-out; /* Fade-in effect */
 }
 

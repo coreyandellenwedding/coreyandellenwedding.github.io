@@ -68,51 +68,7 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
-<body id="top">
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Protected Page</title>
-        <style>
-            #loginSection {
-                text-align: center;
-                margin-top: 100px;
-            }
-            #content {
-                display: none; /* Hide all content by default */
-            }
-        </style>
-    </head>
-</body>
-<body>
-    <div id="loading" style="display: none;">
-        <div class="spinner"></div>
-      </div>
-      
-      <style>
-        .spinner {
-            border: 8px solid #f3f3f3; /* Light gray */
-            border-top: 8px solid #3498db; /* Blue */
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-            margin: auto;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-      </style>
-    <div id="loginSection" style="display: none;">
-        <h2>Welcome to Corey & Ellen's wedding page :&#41; </h2>
-        <input type="text" id="codeInput" placeholder="Enter code here" onkeydown="checkEnter(event)">
-        <button onclick="checkCode()">Submit</button>
-    </div>
-    <div id="loader" class="loader" style="display:none"></div>
-    
+<body>    
     <div id="welcome-modal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -137,14 +93,7 @@
                         <div class="header-nav">
                             <nav>
                                 <ul class="primary-nav">
-                                    <b><li><a href="#intro">Our story</a></li></b>
-                                    <b><li><a href="#events">Events</a></li></b>
-                                    <b><li><a href="#eng-pics">Engagement</a></li></b>
-                                    <b><li><a href="pages/registry.html">Registry</a></li></b>
-                                    <b><li><a href="#venue" class="login">Venue</a></li></b>
-                                </ul>
-                                <ul class="member-actions">
-                                    <li><a href="#rsvp" class="btn btn-accent btn-large rsvp-btn">RSVP</a></li>
+                                    <b><li><a href="#highlights">Highlights</a></li></b>
                                 </ul>
                             </nav>
                         </div>
@@ -154,393 +103,98 @@
                     </div>
                 </header>
             </section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                        <div class="hero-content text-center">
-                            <div class="line1">C<span>&</span>E</div>
-                            <div class="line2">COREY & ELLEN</div>
-                            <div class="line3">08.02.2025</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 hidden-xs"></div>
-                    <div class="col-sm-4 hidden-xs text-center">
-                        <li><a href="#rsvp" class="btn btn-accent btn-large rsvp-btn">RSVP</a></li>
-                    <div class="col-sm-4 hidden-xs"></div>
-                </div>
-            <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
         </section>
 
-        <section id="invitation" class="section-padding">
+        <section id="highlights" class="section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h3 id="invitationMessage">
-                            Hey all! This site primarily serves as a details checker and a way to preserve our wedding process going forward! Feel free to check in once in a while :)
+                            Thank you for attending our wedding! We're so excited to share our memories here!
                         </h3>
-                        <div id="welcome-button-content">
-                            <h4>If you liked the welcome message, click the button to show it again!</h4>
+                        <h3>
+                            Check out our albums!
+                        </h3>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Bridal Party</h5>
+                                            <div class="mb-3">
+                                                <a href="https://1drv.ms/a/c/da2b1c6ef7316dea/EtpKqGOsv6BLvBwODLo45hAB1jdau3g-wJOGW2g8kJ5YmQ?e=8FaONu" class="btn btn-outline-primary mb-2">da boys</a>
+                                                <a href="https://1drv.ms/a/c/da2b1c6ef7316dea/EhgkKHq7kG1KhrCjAuUftOUB7mdgBz-17HCf4TbxnMlTZA?e=fkXQOe" class="btn btn-outline-primary">da girls</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Ceremony & Reception</h5>
+                                            <div class="mb-3">
+                                                <a href="https://1drv.ms/a/c/da2b1c6ef7316dea/EvEPY4yAXy5Bk47kpT9bOmsBCH1wTLAYsXCupHWiDJ4JqQ?e=yseQUo" class="btn btn-outline-primary mb-2">Garden Ceremony</a>
+                                                <a href="https://1drv.ms/a/c/da2b1c6ef7316dea/EhWlZZJjHN1JpqTQDrQOJIAB996DOa7loS35QfZ3S2pO1w?e=Glsp4e" class="btn btn-outline-primary">Banquet Reception</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Fam & Bridal Party</h5>
+                                            <a href="https://1drv.ms/a/c/da2b1c6ef7316dea/EkuE7C5jG2VHklCxzF7FjwIBcMLUufPppkyqe8Xe35RYMA?e=HUSTTV" class="btn btn-outline-primary">SQUAD</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div id="welcome-button-content">
+                            <h4>If you still have your code, you can view our thank you message to you here!</h4>
                             <button class="btn btn-accent" id="show-welcome-modal" onclick="$('#welcome-modal').modal('show')">Welcome</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-12 text-center mb-4">
+                    <h3>Watch the highlights!</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Our Wedding Story</h5>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kbennIM5aZI" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Ceremony Entrance</h5>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vDJDe-dfgFA" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Reception Entrance</h5>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GhVD3IAV5SM" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="intro">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h3 class="header">Our story</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 hidden-sm hidden-xs">
-                        <div class="image-container">
-                            <img src="img/2018.png" class="scaled-image">
-                            <div class="weighed-text">2018</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="weighed-text">
-                            Our story began like any great romance - with alcohol and no intention to date long term.
-                        </p>
-                        <p class="weighed-text">
-                            Corey, with a flight to Seattle the next morning, decided to attend a VSA afterparty. Ellen, a large contributor to VSA, was attending to socialize. Of course, Ellen fell for the DASHING Corey at first sight
-                            and HAD to talk to him. They hit it off there and then!
-                        </p>
-                        <p class="weighed-text">
-                            When Corey returned to New York from his interview, the two decided to go on a date.
-                        </p>
-                        <p class="weighed-text">
-                            On their first date, Corey was interrupted with a phone call offer from his recruiter and knew he was moving across the country to jumpstart his career.
-                        </p>
-                        <p class="weighed-text">
-                            Ellen and Corey connected well but believed it to be temporary; they continued to spend time together for the next two weeks.
-                        </p>
-                        <p class="weighed-text">
-                            When Corey moved, they quickly realized how much they meant to each other. What started as “temporary” turned into a leap of faith into a long distance relationship.
-                        </p>
-                        <p class="weighed-text">
-                            Fast forward through a pandemic, reuniting, and continued dating, here we are!
-                        </p>
-                    </div>
-                    <div class="col-md-3 hidden-sm hidden-xs">
-                        <div class="image-container">
-                          <img src="img/2024.jpg" class="scaled-image">
-                          <div class="weighed-text">2024</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/2018.png" class="wp8"></div>
-                    <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/2024.jpg" class="wp9"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="eng-pics" class="section-padding">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h3 class="header">Engagement Pics</h3>
-                        <div class="eng-container">
-                            <div class="eng-item">
-                              <img src="img/eng_pics/disney.jpeg" alt="Disney">
-                            </div>
-                            <div class="eng-item">
-                              <img src="img/eng_pics/dimsum.jpeg" alt="Dim Sum">
-                            </div>
-                            <div class="eng-item">
-                              <img src="img/eng_pics/roof2.jpg" alt="Roof">
-                            </div>
-                          </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="events section-padding" id="events">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="header">Events</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
-                        <div class="wp3">
-                            <p><strong>1st August</strong></p>
-
-                            <h5>do not disturb <span class="time">all day</span></h5>
-                            <p class="weighed-text">don't bother me</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
-                        <div class="wp3">
-                            <p><strong>2nd August</strong></p>
-                            <div id='ceremony-content'>
-                                <h5>Cocktail Hour <span class="time">Queens Botanical Garden, 2 PM</span></h5>
-                                <p class="weighed-text">This is leading up to the ceremony</p>
-
-                                <h5>Ceremony <span class="time">Queens Botanical Garden, 3PM-4PM</span></h5>
-                                <p class="weighed-text">We get married here, water should be provided!</p>
-                            </div>
-                        </div>
-                        <div class="wp5">
-                            <h5>Banquet <span class="time">New Mulan, Flushing 5:30pm - 10pm</span></h5>
-                            <p class="weighed-text">We'll eat here. Eat and party with us!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row section-padding">
-                    <div class="col-md-4 col-md-offset-4 text-center">
-                        <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal">
-                            <i class="fa fa-barcode"></i>&nbsp;&nbsp;Dress code
-                        </a>
-                    </div>
-                </div>
-                <a>We ask that you avoid wearing white, as that is traditionally reserved for the bride. Also please avoid wearing a pastel/baby blue as that will be the bridesmaid's colors!</a>
-            </div>
-
-            <div id="dc-modal" class="modal fade" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                            </button>
-                            <h3 class="text-center section-padding">Ugh... dress codes?</h3>
-                            <div id='ceremony-dress-code'>
-                                <h5>Ceremony<span class="time">2:30PM - 4PM</span></h5>
-                                <p>
-                                    It'll be the afternoon, but hopefully it won't be too hot. Semi-formal but be careful with the heat!
-                                </p>
-                            </div>
-                            <h5>Banquet<span class="time">6PM - 10PM</span></h5>
-                            <p>
-                                A semi-formal look that is contemporary & fashionable which is not too prim & proper is the best
-                                to pull off this night. Here I searched pinterest for
-                                <a href="https://www.pinterest.com/search/pins/?q=wedding%20attire%20for%20women&eq=wedding%20attire">ladies</a>
-                                & <a href="https://www.pinterest.com/search/pins/?q=wedding%20attire%20for%20men">gents</a> if you needed ~ideas~
-                            </p>
-                            <p>
-                                Dress however you like though! Pictures will be taken and forever remembered 😀
-                            </p>
-                            <p>
-                                We ask that you avoid wearing white, as that is traditionally reserved for the bride. Also please avoid wearing a pastel/baby blue as that will be the bridesmaid's colors!
-                            </p>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
-        </section>
-
-        <section id="venue">
-            <div class="col-md-offset-3 col-md-6">
-                <div id="map-content" class="pointer-events-auto">
-                <div class="text-center">
-                    <h2 id="venue-title">VENUES</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 venue-leftcol" id='ceremony-venue'>
-                    <a target="_blank" href="https:/maps.app.goo.gl/gCaSfHaRtaw4ct8M7" class="venue-link">
-                        <div class="venue-container">
-                            <h3>Queens Botanical Garden</h3>
-                            <p><strong>43-50 Main St Flushing, NY 11355</strong></p>
-                        </div>
-                    </a>
-                    </div>
-                    <div id="venue-restaurant" class="col-md-6 venue-rightcol">
-                    <a target="_blank" href="https://maps.app.goo.gl/ptfXjNubX5kwTRBL7" class="venue-link">
-                        <div class="venue-container">
-                            <h3>New Mulan</h3>
-                            <p>136-17 39th Ave, Flushing, NY 11354</p>
-                        </div>
-                    </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="parking">
-            <div class="col-md-offset-3 col-md-6">
-                <div class="text-center">
-                    <h2 id="parking-title">PARKING SITUATION</h2>
-                </div>
-                <div class="col-md-12" id="ceremony-parking">
-                    <div class="venue-container">
-                        <h3>Queens Botanical Garden</h3>
-                        <p><strong>A parking lot is located on the west side of the garden, it's about a 5 minute walk.</strong></p>
-                        <img src="img/main_site/parking_lot.png" alt="Parking Lot">
-                    </div>
-                </div>
-                <div class="col-md-12" id="restaurant-parking">
-                    <div class="venue-container">
-                        <h3>New Mulan</h3>
-                        <h3>136-20 38th Ave, Flushing, NY 11354</h3>
-                        <p><strong>The parking lot attached to New Mulan is $6 for 3 hours and then $6 for every hour after that. There are parking lots in the area or hopefully street parking should be available.</strong></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="things-to-do">
-            <div class="col-md-offset-3 col-md-6">
-                <div class="text-center">
-                    <h2 id="activities-title">A WEEKEND IN FLUSHING</h2>
-                    <h3>Some things Corey and Ellen like to do in Flushing :)</h3>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="activities-container" title="Ellen likes Gacha games :)">
-                            <img src="img/todo/tangram.jpg" alt="Ellen likes Gacha games :)" class="img-fluid">
-                            <div class="activities-title">Walk around Tangram Mall</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="activities-container position-relative" title="Ellen likes this bubble tea the best :)">
-                            <img src="img/todo/mollytea.jpg" alt="Ellen likes this bubble tea the best :)" class="img-fluid">
-                            <div class="activities-title">Get Molly Tea</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="activities-container position-relative" title="Corey says Mets team best team :)">
-                            <img src="img/todo/mets.jpg" alt="Corey says Mets team best team :)" class="img-fluid">
-                            <div class="activities-title">Go see the Mets!</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="activities-container position-relative" title="Queens Night Market runs on Saturday night and has good food!">
-                            <img src="img/todo/nightmarket.jpg" alt="Queens Night Market runs on Saturday night and has good food!" class="img-fluid">
-                            <div class="activities-title">Eat at Queens Night Market</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="activities-container position-relative" title="all we do is eat">
-                            <img src="img/todo/newworldmall.jpg" alt="all we do is eat" class="img-fluid">
-                            <div class="activities-title">Eat at New World Mall Food Court</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="activities-container position-relative" title="soup dumps are the bes">
-                            <img src="img/todo/shanghaiyou.jpg" alt="soup dumps are the bes" class="img-fluid">
-                            <div class="activities-title">Eat at Shanghai You Garden</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="activities-container position-relative" title="Asian Jewel is a nice dimsum spot">
-                            <img src="img/todo/asianjewel.jpg" alt="Asian Jewel is a nice dimsum spot" class="img-fluid">
-                            <div class="activities-title">Eat at Asian Jewel</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="activities-container position-relative" title="chicken sandy is a classic">
-                            <img src="img/todo/carnation.jpg" alt="chicken sandy is a classic" class="img-fluid">
-                            <div class="activities-title">Grab Carnation Bakery buns</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>        
-
-        <section class="rsvp text-center" id="rsvp">
-            <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                            </button>
-                            <div class="section-padding">
-                                <h3>Thank you!</h3>
-                                <p>We are glad to see you join us on our big day (or if you can't make it we hope to see you soon :D)</p>
-                                <div id="add-to-cal"></div>
-                            </div>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <h3>RSVP here</h3>
-                        <form id="rsvp-form" class="rsvp-form"
-                            autocomplete="off"
-                            action=""
-                            method="POST">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-input-group">
-                                        <i class="fa fa-user"></i><input name="code" class=""
-                                                                        placeholder="Code from Invite"
-                                                                        autocomplete="off"
-                                                                        required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-input-group">
-                                        <i class="fa fa-envelope"></i><input type="email" name="email" class=""
-                                                                            placeholder="Your email"
-                                                                            autocomplete="off"
-                                                                            required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-input-group">
-                                        <i class="fa fa-user"></i><input name="name" class=""
-                                                                        placeholder="Your name"
-                                                                        autocomplete="off"
-                                                                        required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6" id="event-option">
-                                    <div class="form-input-group">
-                                        <i class="fa fa-calendar"></i>
-                                        <select name="attendance">
-                                            <option value="" disabled selected>What can you attend?</option>
-                                            <option value="both">Both</option>
-                                            <option value="ceremony">Just Ceremony</option>
-                                            <option value="reception">Just Reception</option>
-                                            <option value="no">We can't make it :(</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row" id="plus-one">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-input-group">
-                                        <i class="fa fa-users"></i><input type="name" name="plusOne" class=""
-                                                                        placeholder="Name of +1"
-                                                                        autocomplete="off"
-                                                                        >
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row" style="display: none">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-input-group">
-                                        <input type="name" name="useRSVP" value="true">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12" id="alert-wrapper"></div>
-                            </div>
-                            <button class="btn-fill rsvp-btn">
-                                Yes,
-                                that's me!
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <footer>
             <div class="container">
                 <div class="row">
